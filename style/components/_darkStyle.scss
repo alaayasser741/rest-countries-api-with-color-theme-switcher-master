@@ -1,0 +1,40 @@
+.dark-theme{
+    background-color: var(--Very-Dark-Blue);
+    color: var(--White);
+    nav{
+        background-color: var(--Dark-Blue);
+        .dark{
+                .halfmoon{
+                    display: none;
+                }
+                .fullmoon{
+                    display: unset !important;
+                }
+        } 
+    }
+    .form-control{
+        .search{
+            input{
+                background-color: var(--Dark-Blue);
+                outline: 0 !important;
+                border: 0 !important;
+                color: var(--White);
+                &::placeholder{
+                    color: var(--White);
+                }
+            }
+        }
+        .dropdown{
+            .select,.list{
+                background-color: var(--Dark-Blue) !important;
+                color: var(--White);
+            }
+        }
+    }
+    .flags {
+        .box{
+            background-color: var(--Dark-Blue) !important;
+            color: var(--White); 
+        }
+    }
+}

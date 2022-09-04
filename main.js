@@ -1,7 +1,17 @@
 let dropSelect = document.querySelector(".dropdown .select");
 let dropList = document.querySelector(".dropdown .list");
 let Region = document.querySelectorAll(".dropdown .list li");
+let main = document.querySelector("main");
+let darkIcon = document.querySelector(".dark");
+let details = document.querySelector(".details");
 
+darkIcon.addEventListener("click", () => {
+  if (main.className === "dark-theme") {
+    main.classList.remove("dark-theme");
+  } else {
+    main.classList.add("dark-theme");
+  }
+});
 dropSelect.addEventListener("click", () => {
   if (dropList.style.display == "none") {
     dropList.style.display = "block";
@@ -48,7 +58,15 @@ async function displayData() {
                       `;
         Flags.innerHTML = flag;
         // select filter
-
+        /*
+        let _box = document.querySelectorAll(".box");
+        _box.forEach((el) => {
+          el.addEventListener("click", () => {
+            details.classList.toggle("show");
+            showCountryDetails(d);
+          });
+        });
+        */
         Region.forEach((el) => {
           el.addEventListener("click", showcards);
         });
@@ -76,11 +94,44 @@ function searchCountry() {
   let _card = document.querySelectorAll(".flags .container .box");
   let searchValue = search.value.toUpperCase();
   _card.forEach((el) => {
-      if (!el.innerHTML.toUpperCase().includes(searchValue)) {
-        el.style.display = "none";
-      } else {
-        el.style.display = "block";
-      }
+    if (!el.innerHTML.toUpperCase().includes(searchValue)) {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
   });
 }
 search.addEventListener("keyup", searchCountry);
+
+// Details
+/*
+function showCountryDetails(d) {
+  details.innerHTML = `
+  <div class="container">
+  <button class="back">&larr; Back</button>
+  <div class="detail">
+      <div class="img">
+          <img src="${d.flags.png}" alt="flag">
+      </div>
+      <div class="info">
+          <h2>Palestine</h2>
+          <ul>
+              <li>Native Name: <span>${d.name.common}</span></li>
+              <li>Population: <span>ppp</span></li>
+              <li>Region: <span>ppp</span></li>
+              <li>Sub Region: <span>ppp</span></li>
+              <li>Capital: <span>ppp</span></li>
+              <li>Top level Domain: <span>ppp</span></li>
+              <li>Currencies: <span>ppp</span></li>
+              <li>Languages: <span>ppp</span></li>
+          </ul>
+      </div>
+  </div>
+</div>
+  `;
+  let back = document.querySelector(".back");
+back.addEventListener("click", () => {
+  details.classList.toggle("show");
+});
+}
+*/
