@@ -1,0 +1,242 @@
+main {
+    background-color: var(--Very-Light-Gray);
+
+    nav {
+        background-color: var(--White);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        width: 100%;
+        margin-bottom: 3rem;
+
+        .container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .dark {
+
+                i {
+                    font-size: 1.3rem;
+                }
+
+                span {
+                    margin-left: .2rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+
+                .fullmoon {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .form-control {
+        margin-bottom: 4rem;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            .search {
+                position: relative;
+                height: fit-content;
+
+                input {
+                    padding: 1.3rem 1rem 1.3rem 4rem;
+                    width: 550px;
+                    border-radius: 7px;
+                    -webkit-border-radius: 7px;
+                    -moz-border-radius: 7px;
+                    -ms-border-radius: 7px;
+                    -o-border-radius: 7px;
+                    outline: 0;
+                    border: 1px solid var(--Very-Light-Gray);
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    font-size: 1rem;
+                }
+
+                &::after {
+                    content: '\f002';
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    color: var(--Dark-Gray);
+                    position: absolute;
+                    left: 1.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                }
+            }
+
+            .dropdown {
+                font-weight: 600;
+                position: relative;
+
+                .select {
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    padding: 1rem;
+                    margin-bottom: .3rem;
+                    background-color: var(--White);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 200px;
+                    border-radius: 7px;
+                    -webkit-border-radius: 7px;
+                    -moz-border-radius: 7px;
+                    -ms-border-radius: 7px;
+                    -o-border-radius: 7px;
+                    cursor: pointer;
+                }
+
+                .list {
+                    display: none;
+                    background-color: var(--White);
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    padding: 1rem;
+                    border-radius: 7px;
+                    -webkit-border-radius: 7px;
+                    -moz-border-radius: 7px;
+                    -ms-border-radius: 7px;
+                    -o-border-radius: 7px;
+                    position: absolute;
+                    width: 100%;
+
+                    li {
+                        padding: .5rem 0;
+                        cursor: pointer;
+
+                        &:hover {
+                            translate: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .flags {
+        margin-bottom: 4rem;
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+
+            .box {
+                background-color: var(--White);
+                width: 320px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                overflow: hidden;
+                border-radius: 7px;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                -ms-border-radius: 7px;
+                -o-border-radius: 7px;
+                margin: 0 auto;
+
+
+                img {
+                    width: 100%;
+                    height: 200px;
+                }
+
+                .txt {
+                    padding: 1.5rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .6rem;
+
+                    h2 {
+                        margin-bottom: 1rem;
+                    }
+
+                    span {
+                        font-weight: 400;
+
+                        span {
+                            font-weight: 800;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (width < 1440px){
+    .flags {
+        .container {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+            gap: 2rem;
+
+            .box {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media (width < 991px) {
+    main {
+        .form-control {
+            .container {
+                .search {
+                    input {
+                        width: 400px;
+                    }
+                }
+            }
+        }
+
+        .flags {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+                gap: 2rem;
+            }
+        }
+    }
+}
+
+@media (width < 768px) {
+    main {
+        nav {
+            .container {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                .dark {
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .form-control {
+            .container {
+                flex-direction: column;
+                gap: 2rem;
+
+                .search {
+                    input {
+                        width: 98%;
+                    }
+                }
+
+                .dropdown {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
